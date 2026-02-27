@@ -16,6 +16,11 @@ echo "Testing the connection to z/OSMF using User & Pass variables"
 echo "======================================================="
 zowe zosmf check status --host "204.90.115.200" --port "10443" --user "$ZOWE_USERNAME" --pass "$ZOWE_PASSWORD" --reject-unauthorized false
 
+echo "======================================================="
+echo "Testing the connection to z/OSMF using profile"
+echo "======================================================="
+zowe zosmf check status
+
 #echo "Running the first zowe command"
 #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &>/dev/null; then
 #  echo "Directory does not exist. Creating it..."
