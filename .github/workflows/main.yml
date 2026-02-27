@@ -14,7 +14,7 @@ jobs:
       with:
         distribution: 'zulu'  #V2 only supports zulu, temurin & adopt, not semeru as I wanted since it's IBM.
         java-version: '11'
-    - name: Run COBOL Check
+    - name: Setup Mainframe Environment and Upload COBOL Check
       env:
         ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
         ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
@@ -22,3 +22,5 @@ jobs:
         # Here we'll add our commands to run cobolcheck
         echo "Running COBOL Check"
         # Add actual cobolcheck commands here
+        chmod +x .github/scripts/zowe_operations.sh
+        .github/scripts/zowe_operations.sh
