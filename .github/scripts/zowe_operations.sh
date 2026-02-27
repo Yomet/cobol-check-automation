@@ -7,7 +7,7 @@ LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 
 #Debugging the zowe CLI installation
 echo "Testing the connection to z/OSMF using hardcoded values"
-zowe zosmf check status --host "204.90.115.200" --port "10443" --user "Z79951" --pass "SAI29IZI"
+zowe zosmf check status --host "204.90.115.200" --port "10443" --user "Z79951" --pass "SAI29IZI" --reject-unauthorized false
 
 #echo "Running the first zowe command"
 #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &>/dev/null; then
