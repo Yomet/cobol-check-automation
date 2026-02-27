@@ -12,7 +12,7 @@ jobs:
     - name: Set up Java
       uses: actions/setup-java@v2
       with:
-        distribution: 'semeru'
+        distribution: 'zulu'  #V2 only supports zulu, temurin & adopt, not semeru as I wanted since it's IBM.
         java-version: '11'
     - name: Run COBOL Check
       env:
