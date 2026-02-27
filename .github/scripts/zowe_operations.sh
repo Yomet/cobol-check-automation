@@ -3,7 +3,7 @@
 
 # Convert username to lowercase
 LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
-PARAM_STRING="--host \"204.90.115.200\" --port \"10443\" --user \"$ZOWE_USERNAME\" --pass \"$ZOWE_PASSWORD\" --reject-unauthorized false"
+PARAM_STRING="-H \"204.90.115.200\" -P 10443 -u \"$ZOWE_USERNAME\" --pw \"$ZOWE_PASSWORD\" --ru false"
 DEBUGGING_INFO_TO_BE_DELETED='
 #Debugging the zowe CLI installation
 echo "======================================================="
