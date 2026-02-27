@@ -12,6 +12,7 @@ jobs:
     - name: Set up Java
       uses: actions/setup-java@v2
       with:
+        distribution: 'semeru'
         java-version: '11'
     - name: Run COBOL Check
       env:
