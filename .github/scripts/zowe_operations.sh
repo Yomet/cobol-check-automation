@@ -5,7 +5,7 @@
 LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 PARAM_STRING="-H 204.90.115.200 -P 10443 -u $ZOWE_USERNAME --pw $ZOWE_PASSWORD --ru false"
 #PARAM_STRING="-H 204.90.115.200 -P 10443 -u \"$ZOWE_USERNAME\" --pw \"5a3739393531847e16334417485f42b3:f8b4b8983c6ef461258f05f82f1df5ea\" --ru false"
-#DEBUGGING_INFO_TO_BE_DELETED='
+DEBUGGING_INFO_TO_BE_DELETED='
 #Debugging the zowe CLI installation
 echo "======================================================="
 echo $PARAM_STRING
@@ -17,7 +17,6 @@ zowe zosmf check status -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw 
 echo "======================================================="
 echo "Trying to run the zowe commands with hardcoded values"
 echo "======================================================="
-echo 'Running: zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw "$ZOWE_PASSWORD" --ru false"'
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw "$ZOWE_PASSWORD" --ru false
 #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw "$ZOWE_PASSWORD" --ru false &>/dev/null; then
 #  echo "Directory does not exist. Creating it..."
@@ -28,7 +27,6 @@ zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115
 echo "======================================================="
 echo "Trying to run the zowe commands with values in variable"
 echo "======================================================="
-echo 'Running: zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING'
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING
 #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING &>/dev/null; then
 #  echo "Directory does not exist. Creating it..."
@@ -36,9 +34,9 @@ zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING
 #else
 #  echo "Directory already exists."
 #fi
-
+'
 # Check if directory exists, create if it doesn't
-COMMENTING_OUT_CODE = '
+#COMMENTING_OUT_CODE = '
 echo "Running the first zowe command"
 if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING &>/dev/null; then
   echo "Directory does not exist. Creating it..."
@@ -51,4 +49,4 @@ zowe zos-files upload dir-to-uss "./cobol-check" "/z/$LOWERCASE_USERNAME/cobolch
 # Verify upload
 echo "Verifying upload:"
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING 
-'
+
