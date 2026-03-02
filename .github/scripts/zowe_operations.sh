@@ -17,6 +17,7 @@ zowe zosmf check status -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw 
 echo "======================================================="
 echo "Trying to run the zowe commands with hardcoded values"
 echo "======================================================="
+echo 'Running: zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw "$ZOWE_PASSWORD" --ru false"'
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw "$ZOWE_PASSWORD" --ru false
 #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115.200" -P "10443" -u "$ZOWE_USERNAME" --pw "$ZOWE_PASSWORD" --ru false &>/dev/null; then
 #  echo "Directory does not exist. Creating it..."
@@ -25,8 +26,9 @@ zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" -H "204.90.115
 #  echo "Directory already exists."
 #fi
 echo "======================================================="
-echo "Trying to run the zowe commands with hardcoded values"
+echo "Trying to run the zowe commands with values in variable"
 echo "======================================================="
+echo 'Running: zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING'
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING
 #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING &>/dev/null; then
 #  echo "Directory does not exist. Creating it..."
