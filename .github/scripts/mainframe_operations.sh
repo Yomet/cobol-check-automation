@@ -8,13 +8,13 @@ export PATH=$PATH:/usr/lpp/zowe/cli/node/bin
 java -version
 # Set ZOWE_USERNAME
 ZOWE_USERNAME="Z79951" # Replace with the actual username
-# Make cobolcheck executable
-chmod +x cobolcheck
-echo "Made cobolcheck executable"
 # Change to the cobolcheck directory
 cd cobolcheck
 echo "Changed to $(pwd)"
 ls -al
+# Make cobolcheck executable
+chmod +x cobolcheck
+echo "Made cobolcheck executable"
 # Make script in scripts directory executable
 cd scripts
 chmod +x linux_gnucobol_run_tests
