@@ -15,9 +15,9 @@ else
 fi
 # Upload files
 echo "Uploading the cobol-check directory"
-zowe zos-files upload dir-to-uss "./cobol-check" "/z/$LOWERCASE_USERNAME/cobolcheck" --recursive --binary-files "cobol-check-0.2.9.jar" $PARAM_STRING 
+zowe zos-files upload dir-to-uss "./cobolcheck" "/z/$LOWERCASE_USERNAME/cobolcheck" --recursive --binary-files "cobol-check-0.2.9.jar" $PARAM_STRING 
 echo "Uploading the jar file"
-zowe zos-files upload file-to-uss "./cobol-check-0.2.19.jar" "/z/$LOWERCASE_USERNAME/cobolcheck/bin/cobol-check-0.2.19.jar" --binary $PARAM_STRING 
+zowe zos-files upload file-to-uss "./cobolcheck-0.2.19.jar" "/z/$LOWERCASE_USERNAME/cobolcheck/bin/cobol-check-0.2.19.jar" --binary $PARAM_STRING 
 # Verify upload
 echo "Verifying upload:"
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" $PARAM_STRING 

@@ -1,0 +1,3 @@
+# pattern        local-encoding        remote-encoding
+# Don't upload the cobol-check-*.jar file
+*.jar     -
